@@ -74,10 +74,20 @@ npx serve .
 3. 打开仓库 **Settings → Pages**，`Source` 选择 `Deploy from a branch`，分支选 `main`、目录选 `/ (root)`，保存。
 4. 等待约 1 分钟后访问 `https://<你的用户名>.github.io/<仓库名>/`。
 
-### 方式二：GitHub Actions 自动部署
+> 本仓库当前采用**方式一**（分支根目录），因此没有启用 Actions 自动部署。
+> 根目录的 `.nojekyll` 用于让 GitHub Pages 跳过 Jekyll 处理。
 
-仓库已包含 `.github/workflows/pages.yml`，把上面的第 3 步改为：
-**Settings → Pages → Source 选择 `GitHub Actions`**，之后每次 push 到 `main` 都会自动重新发布。
+### 方式二：GitHub Actions 自动部署（可选）
+
+现成的 workflow 保存在 **`_tools/optional-workflows/pages.yml`**（未启用）。若想改用自动部署：
+
+```bash
+mkdir -p .github/workflows
+cp _tools/optional-workflows/pages.yml .github/workflows/pages.yml
+git add .github && git commit -m "ci: 启用 GitHub Actions 自动部署" && git push
+```
+
+然后在 **Settings → Pages → Source** 选择 `GitHub Actions`，之后每次 push 到 `main` 都会自动重新发布。
 
 ---
 
