@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+
+  <title>史浩然 | C++ 开发工程师 · 个人主页</title>
+  <meta name="description" content="史浩然，桂林电子科技大学计算机科学与技术硕士，2026 届校招 C++ 开发工程师。熟悉 C++17、高性能内存数据库内核、CUDA 算子开发与深度学习模型推理优化。" />
+  <meta name="author" content="史浩然" />
+  <meta name="keywords" content="史浩然, C++, 校招, 后端开发, 高性能计算, 内存数据库, CUDA, MindSpore, 计算机视觉" />
+
+  <!-- 社交分享 -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="史浩然 | C++ 开发工程师" />
+  <meta property="og:description" content="2026 届校招 · 高性能内存数据库内核 / CUDA 算子 / 模型部署" />
+  <meta property="og:image" content="assets/img/avatar.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- 站点图标 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232f6fed'/%3E%3Ctext x='50' y='50' font-size='58' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='central'%3E%E5%8F%B2%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- 首屏前套用主题，避免暗色模式闪白 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      } catch (e) { /* 隐私模式下忽略 */ }
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- 顶部导航 -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true">史</span>
+        <span class="brand-text">
+          <strong data-bind="name">史浩然</strong>
+          <small data-bind="title">C++ 开发工程师</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="页面导航"></nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button"
+                aria-label="切换深浅色主题" title="切换深浅色主题">
+          <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.6 8.6 0 1 0 10.2 10.2z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button"
+                aria-label="打开目录" aria-expanded="false" aria-controls="mobileNav">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" hidden></nav>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <!-- 首屏 -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow" data-bind="subtitle">2026 届校园招聘 · 求职岗位：C++</p>
+          <h1 class="hero-name">
+            <span data-bind="name">史浩然</span>
+            <span class="hero-name-en" data-bind="nameEn">Shi Haoran</span>
+          </h1>
+          <p class="hero-role" data-bind="title">C++ 开发工程师</p>
+          <p class="hero-summary" data-bind="summary"></p>
+
+          <ul class="hero-facts" id="heroFacts"></ul>
+
+          <div class="hero-actions" id="heroActions"></div>
+        </div>
+
+        <div class="hero-portrait reveal">
+          <div class="portrait-frame">
+            <img data-bind-src="avatar" alt="史浩然的证件照" width="360" height="420" loading="eager" decoding="async" />
+          </div>
+          <div class="portrait-badge">
+            <span class="dot" aria-hidden="true"></span>
+            <span>开放 2026 届校招机会</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="section-index">01</span>
+          <h2 class="section-title">关于我</h2>
+        </header>
+        <div class="about-grid">
+          <div class="card about-card reveal" id="aboutCard"></div>
+          <div class="card profile-card reveal" id="profileCard"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="section section-alt" id="education">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="section-index">02</span>
+          <h2 class="section-title">教育背景</h2>
+        </header>
+        <ol class="timeline" id="educationTimeline"></ol>
+      </div>
+    </section>
+
+    <!-- 技能证书 -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="section-index">03</span>
+          <h2 class="section-title">技能证书</h2>
+        </header>
+        <div class="skills-grid" id="skillsGrid"></div>
+        <h3 class="subsection-title reveal">荣誉奖项</h3>
+        <ul class="award-list" id="awardList"></ul>
+      </div>
+    </section>
+
+    <!-- 项目经验 -->
+    <section class="section section-alt" id="projects">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="section-index">04</span>
+          <h2 class="section-title">项目经验</h2>
+        </header>
+        <div class="projects" id="projectsList"></div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="section-index">05</span>
+          <h2 class="section-title">联系方式</h2>
+        </header>
+        <div class="contact-card card reveal" id="contactCard"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> <span data-bind="name">史浩然</span> · 用 HTML / CSS / JavaScript 手工打造</p>
+      <p class="footer-hint">托管于 GitHub Pages</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="wrap noscript-note">
+      <p>本页面的内容由 JavaScript 渲染，请开启 JavaScript 后查看。</p>
+    </div>
+  </noscript>
+
+  <button class="to-top" id="toTop" type="button" aria-label="回到顶部" title="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/resume-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
