@@ -1,0 +1,7 @@
+# 开发期校验依赖（可由 _tools/README.md 重建）
+_tools/verify/node_modules/
+_tools/verify/shots/
+_tools/verify/package-lock.json
+_tools/.npmcache/
+_tools/sysroot/
+_tools/.pw-browsers/
